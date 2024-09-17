@@ -1,9 +1,11 @@
+import SignupFormMUI from "./mui/SignupMUI";
 import SignupForm from "./signup/SignupForm";
 
 function App() {
   return (
     <div className="app">
-      <SignupForm />
+      {/* <SignupForm /> */}
+      <SignupFormMUI />
     </div>
   );
 }
