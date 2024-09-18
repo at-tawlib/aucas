@@ -4,8 +4,8 @@ import SignupForm from "./signup/SignupForm";
 function App() {
   return (
     <div className="app">
-      {/* <SignupForm /> */}
-      <SignupFormMUI />
+      <SignupForm />
+      {/* <SignupFormMUI /> */}
     </div>
   );
 }
