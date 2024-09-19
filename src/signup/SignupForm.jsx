@@ -282,7 +282,7 @@ function SignupForm() {
 
         {/* Submit button */}
         <button className="submit-btn" type="submit">
-          Submit Application
+          Save & Continue
         </button>
       </form>
     </div>
