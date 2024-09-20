@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./Signup.css";
+import SelectField from "../components/selectfield/SelectField";
+import TextInput from "../components/input/TextInput";
 
 const COUNTRY_LIST = [
   "Ghana",
@@ -95,69 +97,47 @@ function SignupForm() {
         {/* Region and Country fields */}
         <div className="input-row">
           <div className="form-group">
-            <label>Region:</label>
-            <select
+            <SelectField
+              label="Region"
               id="region"
-              value={selectedRegion}
               name="region"
+              value={selectedRegion}
+              options={REGION_LIST}
               onChange={(e) => setSelectedRegion(e.target.value)}
-              required
-            >
-              <>
-                <option value="" disabled>
-                  -- Select Region --
-                </option>
-                {REGION_LIST.map((region) => (
-                  <option key={region} value={region}>
-                    {region}
-                  </option>
-                ))}
-              </>
-            </select>
+            />
           </div>
 
           <div className="form-group">
-            <label>Country:</label>
-            <select
+            <SelectField
+              label="Country"
               id="country"
-              value={selectedCountry}
               name="country"
+              value={selectedCountry}
+              options={COUNTRY_LIST}
               onChange={(e) => setSelectedCountry(e.target.value)}
-              required
-            >
-              <option value="" disabled>
-                -- Select Country --
-              </option>
-              {COUNTRY_LIST.map((country) => (
-                <option key={country} value={country}>
-                  {country}
-                </option>
-              ))}
-            </select>
+            />
           </div>
         </div>
 
         {/* Name and Abbreviation fields */}
         <div className="input-row">
           <div className="form-group">
-            <label>Name:</label>
-            <input
+            <TextInput
+              label="Name"
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              required
             />
           </div>
 
           <div className="form-group">
-            <label>Abbreviation:</label>
-            <input
+            <TextInput
+              label="Abbreviation"
               type="text"
               name="abbreviation"
               value={formData.abbreviation}
               onChange={handleChange}
-              required
             />
           </div>
         </div>
@@ -165,35 +145,24 @@ function SignupForm() {
         {/* Email and Programs fields */}
         <div className="input-row">
           <div className="form-group">
-            <label>Email:</label>
-            <input
+            <TextInput
+              label="Email"
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              required
             />
           </div>
 
-          {/* TODO: should be array of choices */}
           <div className="form-group">
-            <label>Programs:</label>
-            <select
+            <SelectField
+              label="Programs"
               id="programs"
-              value={selectedPrograms}
               name="programs"
+              value={selectedPrograms}
+              options={PROGRAMS_LIST}
               onChange={(e) => setSelectedPrograms(e.target.value)}
-              required
-            >
-              <option value="" disabled>
-                -- Select Program --
-              </option>
-              {PROGRAMS_LIST.map((program) => (
-                <option key={program} value={program}>
-                  {program}
-                </option>
-              ))}
-            </select>
+            />
           </div>
         </div>
 
@@ -211,13 +180,12 @@ function SignupForm() {
 
           {/* TODO: Should be an array of pictures */}
           <div className="form-group">
-            <label>Pics:</label>
-            <input
+            <TextInput
+              label="Pics"
               type="text"
               name="pics"
               value={formData.pics}
               onChange={handleChange}
-              required
             />
           </div>
         </div>
@@ -225,34 +193,24 @@ function SignupForm() {
         {/* Year and City fields */}
         <div className="input-row">
           <div className="form-group">
-            <label>Year:</label>
-            <input
+            <TextInput
+              label="Year"
               type="number"
               name="year"
               value={formData.year}
               onChange={handleChange}
-              required
             />
           </div>
 
           <div className="form-group">
-            <label>City:</label>
-            <select
+            <SelectField
+              label="City"
               id="city"
-              value={selectedCity}
               name="city"
+              value={selectedCity}
+              options={CITY_LIST}
               onChange={(e) => setSelectedCity(e.target.value)}
-              required
-            >
-              <option value="" disabled>
-                -- Select City --
-              </option>
-              {CITY_LIST.map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
-            </select>
+            />
           </div>
         </div>
 
@@ -260,23 +218,14 @@ function SignupForm() {
         {/* TODO: should be a radio button */}
         <div className="input-row">
           <div className="form-group">
-            <label>Category:</label>
-            <select
+            <SelectField
+              label="Category"
               id="category"
-              value={formData.category}
               name="category"
+              value={formData.category}
+              options={CATEGORY_LIST}
               onChange={handleChange}
-              required
-            >
-              <option value="" disabled>
-                -- Select Category --
-              </option>
-              {CATEGORY_LIST.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
+            />
           </div>
         </div>
 
